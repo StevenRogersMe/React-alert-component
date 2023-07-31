@@ -1,6 +1,6 @@
-import {FC} from "react";
-import {Accordion, AccordionDetails, AccordionSummary, Box, CircularProgress} from "@mui/material";
-import {CircleOutlined, ExpandMore, SvgIconComponent, WarningAmberOutlined} from "@mui/icons-material";
+import { FC } from "react";
+import { Accordion, AccordionDetails, AccordionSummary, Box, CircularProgress } from "@mui/material";
+import { CircleOutlined, ExpandMore, SvgIconComponent, WarningAmberOutlined } from "@mui/icons-material";
 
 export interface AlertData {
   "alert-id": number;
@@ -45,8 +45,8 @@ export const Alert: FC<AlertProps> = ({
 
   return (
     <Accordion defaultExpanded>
-      <AccordionSummary expandIcon={<ExpandMore />}>
-        <WarningAmberOutlined sx={{ color: 'gray', mr: 1 }} /> {title}
+      <AccordionSummary expandIcon={<ExpandMore />} >
+        <WarningAmberOutlined sx={{ color: 'gray', mr: 1, ml: 4 }} /> {title}
       </AccordionSummary>
       <AccordionDetails>
         {loading ? (
@@ -55,13 +55,13 @@ export const Alert: FC<AlertProps> = ({
           </Box>
         ) : (
           data.map((item) => (
-            <Accordion key={item["alert-id"]}>
-              <AccordionSummary>
+            <Accordion key={item["alert-id"]} sx={{ pl: 4 }} >
+              <AccordionSummary expandIcon={<ExpandMore />} sx={{ pl: 5 }}>
                 {getAlertIcon(item)}
                 {item["alert-text"]}
               </AccordionSummary>
               <AccordionDetails>
-                {item["alert-time"]}
+                  {item["alert-time"]}
               </AccordionDetails>
             </Accordion>
           ))

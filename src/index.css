@@ -11,3 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.MuiAccordionSummary-expandIconWrapper {
+position: absolute;
+left:10px
+}
+
